@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Web for using Kubernet on Ubuntu</title>
+        <style>
+        h1{text-align: center;}
+        /*BUTTON GROUP*/
+        .btn-group button {
+            background-color: skyblue;
+            border: 1px solid blue;
+            color: white;
+            padding: 10px 24px;
+            cursor: pointer;
+            float: left;
+            }
+        /*TABLE STATUS*/
+        table, td, th {
+            border: 1px solid black;
+            text-align: center;
+        }
+        td, th {
+            height: 50px;
+        }
+        table {           
+            width: 100%;
+            border-collapse: collapse;
+        }
+        /*FOOTER*/
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: blue;
+            color: white;
+            text-align: center;
+        }
+        /*LABEL*/
+        .label {
+            color: white;
+            padding: 8px;
+            font-family: Arial;
+            }
+            .success {background-color: green;}
+            .info {background-color: blue;}
+            .warning {background-color: orange;}
+            .danger {background-color: red;}
+        </style>
+    </head>
+
+    <body>
+        <h1>KUBERNET ON UBUNTU PROJECT</h1>
+       
+            <div class="btn-group" style="width: 100%;">
+                <form action="#" method="POST">
+                    <button style="width: 33.3%;" type="submit" value="Submit"> Create </button>
+                    <button style="width: 33.3%;" type="submit" value="Submit"> Update </button>
+                    <button style="width: 33.3%;" type="submit" value="Submit"> Delete </button>
+                </form>
+            </div>       
+
+        <table>
+            <caption>Kubernet Status Table</caption>
+            <tr><th>Name</th><th>Namespace</th><th>Status</th><th>Age</th><th>Check</th></tr>
+            <tr><td>Sonoo</td><td>Hadoop</td><td><span class="label success">Success</span></td><td>12m</td><td><input type="checkbox"></td></tr>
+            <tr><td>Sonoo</td><td>Hadoop</td><td><span class="label warning">Warning</span></td><td>1d</td><td><input type="checkbox"></td></tr>
+            <tr><td>Sonoo</td><td>Hadoop</td><td><span class="label danger">Danger</span></td><td>32s</td><td><input type="checkbox"></td></tr>
+        </table>
+
+        <div class="footer">
+            <p>Nguyễn Đăng Khoa - Nguyễn Quang Hùng</p>
+        </div>          
+    </body>
+</html>
+
