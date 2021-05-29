@@ -53,18 +53,22 @@
        
             <div class="btn-group" style="width: 100%;">
                 <form action="#" method="POST">
-                    <button style="width: 33.3%;" type="submit" name = "button" value="Create"> Create </button>
-                    <button style="width: 33.3%;" type="submit" name = "button" value="Update"> Update </button>
-                    <button style="width: 33.3%;" type="submit" name = "button" value="Delete"> Delete </button>
+                    <button style="width: 33.3%;" type="submit" name = "button_c" value="Create"> Create </button>
+                    <button style="width: 33.3%;" type="submit" name = "button_u" value="Update"> Update </button>
+                    <button style="width: 33.3%;" type="submit" name = "button_d" value="Delete"> Delete </button>
                 </form>
             </div>       
 
         <table>
             <caption>Kubernet Status Table</caption>
-            <tr><th>Name</th><th>Namespace</th><th>Status</th><th>Age</th><th>Check</th></tr>
-            <tr><td>Sonoo</td><td>Hadoop</td><td><span class="label success">Success</span></td><td>12m</td><td><input type="checkbox"></td></tr>
-            <tr><td>Sonoo</td><td>Hadoop</td><td><span class="label warning">Warning</span></td><td>1d</td><td><input type="checkbox"></td></tr>
-            <tr><td>Sonoo</td><td>Hadoop</td><td><span class="label danger">Danger</span></td><td>32s</td><td><input type="checkbox"></td></tr>
+            
+            {% for row in list %}
+            <tr>
+                {% for column in row %}
+                    <td>{{column}}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
         </table>
 
         <div class="footer">
