@@ -8,7 +8,7 @@ def GetHelmList():
     matrix = []
     for i in list:
         ls  = i.replace(" ", "").split('\t')
-        i[len(i)-1] = i[len(i)-1][-2]
+        ls[len(ls)-1] = ls[len(ls)-1][-2]
         matrix.append(ls)
 
 @app.route("/", methods=["POST", "GET"])
