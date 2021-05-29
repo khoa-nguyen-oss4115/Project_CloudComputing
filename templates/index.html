@@ -54,18 +54,17 @@
             <div class="btn-group" style="width: 100%;">
                 <form action="#" method="POST">
                     <div>
-                    <button style="width: 20%;" type="submit" name = "button_c" value="Create" class="btn_create">START MINIKUBE</button>
+                    <button style="width: 20%;" type="submit" name = "button_start_mini" value="Create" class="btn_create">START MINIKUBE</button>
                     <div class="luachon" style="height: 50px;display: inline-flex; margin-top: 80px;margin-left: -300px;">
                         <span style="font-size: 30px;">CREATE</span>
-                        <button style="width: 33.3%;margin-left: 100px;" type="submit" name = "button_c" value="Create" class="btn_create">HADOOP</button>
-                        <button style="width: 33.3%;margin-left: 100px;" type="submit" name = "button_c" value="Create" class="btn_create">REDIS</button>
-                        <button style="width: 33.3%;margin-left: 100px;" type="submit" name = "button_c" value="Create" class="btn_create">SPARK</button>
-                        <input style="margin-left: 400px;" type="text" placeholder="Name Cluster">
-                        <button style="overflow:hidden;"><span style=" text-align: center;">Ok</span></button>
+                        <button style="width: 33.3%;margin-left: 100px;" type="submit" name = "button_hadoop" value="Create" class="btn_create">HADOOP</button>
+                        <button style="width: 33.3%;margin-left: 100px;" type="submit" name = "button_redis" value="Create" class="btn_create">REDIS</button>
+                        <button style="width: 33.3%;margin-left: 100px;" type="submit" name = "button_spark" value="Create" class="btn_create">SPARK</button>
+                        <input style="margin-left: 400px;" type="text" placeholder="Name Cluster" name="text">
                     </div>
                     </div>
                     <!-- <button style="width: 33.3%;" type="submit" name = "button_u" value="Update"> Update </button> -->
-                    <button style="width: 20%; margin-top: 50px;" type="submit" name = "button_d" value="Delete"> DELETE MINIKUBE</button>
+                    <button style="width: 20%; margin-top: 50px;" type="submit" name = "button_delete_mini" value="Delete"> DELETE MINIKUBE</button>
                 </form>
             </div>       
 
@@ -74,7 +73,7 @@
             <tr>
                 {% for column in title %}
                     <th>{{column}}</th>
-                {% endfor}
+                {% endfor%}
                 <th>DELETE</th>
             </tr>
 
@@ -83,7 +82,7 @@
                 {% for column in row %}
                     <td>{{column}}</td>
                 {% endfor %}
-                    <td><button>DELETE</button></td>
+                    <td><button name="btn_delete_cluster">DELETE</button></td>
             </tr>
             {% endfor %}
         </table>

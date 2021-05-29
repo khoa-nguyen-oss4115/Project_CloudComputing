@@ -26,4 +26,20 @@ list = subprocess.run(["helm","ls"])
 #     i[len(i)-1] = i[len(i)-1][-2]
 #     matrix.append(ls)
 # print(matrix[1][0])
+# name = "spark"
+# a=  subprocess.run(["helm","delete",name])
+# a = os.system("helm install \
+#     --set yarn.nodeManager.resources.limits.memory=4096Mi \
+#     --set yarn.nodeManager.replicas=1 \
+#     stable/hadoop --generate-name")
+# b=subprocess.run(["helm install \
+#     --set yarn.nodeManager.resources.limits.memory=4096Mi \
+#     --set yarn.nodeManager.replicas=1 \
+#     stable/hadoop --generate-name"])
 
+# name ="spark"
+# os.system("helm install %s bitnami/spark" % name)
+os.system("helm install \
+    --set yarn.nodeManager.resources.limits.memory=4096Mi \
+    --set yarn.nodeManager.replicas=1 \
+    stable/hadoop --generate-name")
