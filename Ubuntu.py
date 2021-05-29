@@ -22,7 +22,8 @@ import os
 list = lines = os.popen('helm ls').readlines()
 matrix = []
 for i in list:
-    ls  =i.split('\t')
+    ls  = i.replace(" ", "").split('\t')
+    i[len(i)-1] = i[len(i)-1][-2]
     matrix.append(ls)
 print(matrix[1][0])
 

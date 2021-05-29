@@ -4,21 +4,22 @@ import os
 app = Flask(__name__)
 
 def GetHelmList():
-    list = lines = os.popen('helm ls').readlines()
+    list = os.popen('helm ls').readlines()
     matrix = []
     for i in list:
-        ls = list[i].split('/t')
-        matrix.append([0 for c in range(0, len[list[i]])])
-    
+        ls  = i.replace(" ", "").split('\t')
+        i[len(i)-1] = i[len(i)-1][-2]
+        matrix.append(ls)
 
 @app.route("/", methods=["POST", "GET"])
 def home():
-    GetHelmList()
     if request.method == "POST":
         return render_template("index.html")
     else:
-        
-        return render_template("index.html")
+        if request.method == "GET":
+            return render_template("index.html")
+        else:
+
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
