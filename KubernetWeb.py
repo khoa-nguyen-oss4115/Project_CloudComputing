@@ -4,8 +4,8 @@ import subprocess
 app = Flask(__name__)
 
 def Xuly():
-    list_files = subprocess.run(["helm ls"])
-    print("The exit code was: %d" % list_files.returncode)
+    list = subprocess.run(["helm ls"])
+    print("The exit code was: %d" % list.returncode)
     return
 
 @app.route("/", methods=["POST", "GET"])
