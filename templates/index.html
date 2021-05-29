@@ -65,30 +65,40 @@
                     </div>
                     <!-- <button style="width: 33.3%;" type="submit" name = "button_u" value="Update"> Update </button> -->
                     <button style="width: 20%; margin-top: 50px;" type="submit" name = "button_delete_mini" value="Delete"> DELETE MINIKUBE</button>
+                    <button style="width: 20%; margin-top: 50px;" type="submit" name = "button_delete_cluster" value="Delete"> DELETE CLUSTER</button>
                 </form>
             </div>       
-
+    <form action="#" method="GET"">
         <table>
             <caption><span style="font-size: 40px;">Kubernet Status Table</span></caption>
             <tr>
                 {% for column in title %}
                     <th>{{column}}</th>
                 {% endfor%}
-                <th>DELETE</th>
+                <!-- <th>DELETE</th> -->
             </tr>
 
             {% for row in list %}
             <tr>
                 {% for column in row %}
-                    <td>{{column}}</td>
+                    <td id="name_cluster">{{column}}</td>
                 {% endfor %}
-                    <td><button name="btn_delete_cluster">DELETE</button></td>
+                    <!-- <td><button onclick="myfunction(this.dataset.productid)" type="button">DELETE</button></td> -->
             </tr>
             {% endfor %}
         </table>
+    </form>
         <div class="footer">
             <p>Nguyễn Đăng Khoa - Nguyễn Quang Hùng</p>
-        </div>          
+        </div>   
+
+        <!-- <script>
+            function myfunction(name_cluster) {   
+            alert(name_cluster);
+            var row = document.getElementById(name_cluster).parentNode;
+            console.log(row);
+            }
+        </script> -->
     </body>
 </html>
 

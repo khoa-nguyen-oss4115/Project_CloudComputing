@@ -59,20 +59,17 @@ def home():
             delete_minikube();
             matrix= GetHelmList()
             return render_template("index.html", title = matrix[0], list = matrix[1:len(matrix)])
-    elif request.method == "GET":
-        if request.form.get("btn_delete_cluster"):    
+        elif request.form.get("button_delete_cluster"):    
             delete_cluster()
             matrix= GetHelmList()
             return render_template("index.html", title = matrix[0], list = matrix[1:len(matrix)])
-    else:
-        return render_template("index.html", title = matrix[0], list = matrix[1:len(matrix)])
-
-def star_minikube():
-    return subprocess.run(["minikube","start"])
-def delete_minikube():
-    return subprocess.run(["minikube","delete"])
-
-def delete_cluster(name):
-    return subprocess.run(["helm","delete",name])
+    elif request.method == "GET":
+        if request.form.get("delete_cluster"):    
+            delete_cluster()
+            matrix= GetHelmList()
+            return render_template("index.html", title = matrix[0], list = matrix[1:len(matrix)])
+        else:
+            matrix= GetHelmList()
+            return render_template("index.html", title = matrix[0], list = matrix[1:len(matrix)])
 if __name__ == '__main__':
     app.run(debug=True,host='0.0.0.0')
