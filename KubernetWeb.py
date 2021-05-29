@@ -1,16 +1,19 @@
 from flask import Flask, render_template, redirect, url_for, request
-import subprocess
+import os
 
 app = Flask(__name__)
 
-def Xuly():
-    list = subprocess.run(["helm ls"])
-    print("The exit code was: %d" % list.returncode)
-    return
+def GetHelmList():
+    list = lines = os.popen('helm ls').readlines()
+    matrix = []
+    for i in list:
+        ls = list[i].split('/t')
+        matrix.append([0 for c in range(0, len[list[i]])])
+    
 
 @app.route("/", methods=["POST", "GET"])
 def home():
-    Xuly()
+    GetHelmList()
     if request.method == "POST":
         return render_template("index.html")
     else:

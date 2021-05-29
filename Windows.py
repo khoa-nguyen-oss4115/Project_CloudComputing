@@ -1,2 +1,3 @@
-import os
-os.system('cmd /k "date"') 
+import subprocess
+lisy = subprocess.check_output('cmd /k "date"')
+print(lisy)
