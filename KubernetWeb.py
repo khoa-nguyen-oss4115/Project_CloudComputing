@@ -14,12 +14,18 @@ def GetHelmList():
 @app.route("/", methods=["POST", "GET"])
 def home():
     if request.method == "POST":
-        return render_template("index.html")
-    else:
-        if request.method == "GET":
+        if request.form.get("button_c"):
+            return render_template("index.html")
+        elif request.form.get("button_u"):
+            return render_template("index.html")
+        elif request.form.get("button_d"):
             return render_template("index.html")
         else:
-
+            return render_template("index.html")
+    elif request.method == "GET":
+            return render_template("index.html")
+    else:
+        return render_template("index.html")
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
+    app.run(debug=True)
