@@ -18,7 +18,7 @@ def home():
     matrix = GetHelmList()
     if request.method == "POST":
         if request.form.get("button_c"):
-            return render_template("index.html", list = matrix)
+            return render_template("index.html", title = matrix[0], list = matrix[1:len(matrix)])
         elif request.form.get("button_u"):
             return render_template("index.html")
         elif request.form.get("button_d"):
@@ -26,7 +26,7 @@ def home():
     elif request.method == "GET":
             return render_template("index.html")
     else:
-        return render_template("index.html", list = matrix)
+        return render_template("index.html", title = matrix[0], list = matrix[1:len(matrix)])
 
 def star_minikube():
     return subprocess.run(["minikube","start"])

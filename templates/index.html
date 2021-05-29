@@ -71,7 +71,13 @@
 
         <table>
             <caption><span style="font-size: 40px;">Kubernet Status Table</span></caption>
-            
+            <tr>
+                {% for column in title %}
+                    <th>{{column}}</th>
+                {% endfor}
+                <th>DELETE</th>
+            </tr>
+
             {% for row in list %}
             <tr>
                 {% for column in row %}
